@@ -12,8 +12,9 @@ install_golang () {
     [ "x86_64" = "$(uname -m)" ] && arch="amd64" || arch="386"
     [ "linux" = "${platform}" ] && tempdir=$(mktemp -d asdf-golang.XXXX) || tempdir=$(mktemp -dt asdf-golang)
 
-    curl "https://storage.googleapis.com/golang/go${version}.${platform}-${arch}.tar.gz" -o "${tempdir}/archive.tar.gz"
-
+    #curl "https://storage.googleapis.com/golang/go${version}.${platform}-${arch}.tar.gz" -o "${tempdir}/archive.tar.gz"
+    curl "https://redirector.gvt1.com/edgedl/go/go${version}.${platform}-${arch}.tar.gz" -o "${tempdir}/archive.tar.gz"
+    
     tar -C "$install_path" -xzf "${tempdir}/archive.tar.gz"
 
     rm -rf "${tempdir}"
