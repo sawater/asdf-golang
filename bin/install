@@ -14,7 +14,7 @@ install_golang () {
 
     #curl "https://storage.googleapis.com/golang/go${version}.${platform}-${arch}.tar.gz" -o "${tempdir}/archive.tar.gz"
     echo "https://redirector.gvt1.com/edgedl/go/go${version}.${platform}-${arch}.tar.gz"
-    curl "https://redirector.gvt1.com/edgedl/go/go${version}.${platform}-${arch}.tar.gz" -o "${tempdir}/archive.tar.gz"
+    wget "https://redirector.gvt1.com/edgedl/go/go${version}.${platform}-${arch}.tar.gz" -O "${tempdir}/archive.tar.gz"
     
     tar -C "$install_path" -xzf "${tempdir}/archive.tar.gz"
 
